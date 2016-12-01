@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<texture_files>
+    <texture name="role_1" id="1" path="image/move.png"/>
+    <texture name="role_1" id="2" path="image/sword.png"/>
+</texture_files>
