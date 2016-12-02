@@ -23,7 +23,7 @@ public class Character extends Actor {
     {
         stateTime += Gdx.graphics.getDeltaTime();
         TextureRegion currentFrame = mAn.getKeyFrame(stateTime, true);
-        batch.draw(currentFrame, 0,0);
+        batch.draw(currentFrame,getX(),getY());
     }
 
     public Character(String name,int type)
@@ -31,7 +31,6 @@ public class Character extends Actor {
         mDir = 0;
         mType = type;
         super.setName(name);
-        //Gdx.graphics.getDeltaTime();
         mTexture = TextureManage.GetInstance().GetCharacterTextureById(type);
         if(mTexture == null)
         {
@@ -39,4 +38,6 @@ public class Character extends Actor {
         }
         mAn = new Animation(0.05f,mTexture.GetTextureRegionByDir(0));
     }
+
+
 }

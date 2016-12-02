@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -16,17 +17,19 @@ public class MyGdxGame extends ApplicationAdapter {
 	Texture img;
 	Button button;
 	Stage stage;
-	Character mChar;
+    GameInputProcessor inputProcessor;
+    public static Character gChar;
 	
 	@Override
 	public void create () {
-		TextureManage instance = TextureManage.GetInstance();
+        inputProcessor = new GameInputProcessor();
+        Gdx.input.setInputProcessor(inputProcessor);
+        TextureManage instance = TextureManage.GetInstance();
 
 		stage = new Stage(new StretchViewport(400,400));
-		mChar = new Character("shit",1);
-		stage.addActor(mChar);
+        gChar = new Character("shit",1);
 
-
+		stage.addActor(gChar);
 	}
 
 	@Override
@@ -39,4 +42,5 @@ public class MyGdxGame extends ApplicationAdapter {
 		//button.draw(batch,1);
 		//batch.end();
 	}
+
 }
