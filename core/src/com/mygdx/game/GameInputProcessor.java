@@ -3,6 +3,10 @@ package com.mygdx.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
+import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
+
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 
 /**
  * Created by gl on 2016/12/2.
@@ -67,6 +71,8 @@ public class GameInputProcessor implements InputProcessor {
         {
             Gdx.app.log("debug key ",String.valueOf(character));
         }
+        //MoveByAction
+        //MoveToAction
         return true;
     }
 
